@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNReactNativeMintegral : NSObject <RCTBridgeModule>
+@interface RNMintegral : NSObject <RCTBridgeModule>
 
 @end
   

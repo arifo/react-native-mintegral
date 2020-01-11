@@ -17,8 +17,8 @@ or
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-react-native-mintegral` and add `RNReactNativeMintegral.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNReactNativeMintegral.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `react-native-mintegral` and add `RNMintegral.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRNMintegral.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android

@@ -3,7 +3,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:RNReactNativeMintegral.xcodeproj">
+      location = "group:RNMintegral.xcodeproj">
    </FileRef>
 </Workspace>
   
