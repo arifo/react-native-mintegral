@@ -15,15 +15,19 @@ buildscript {
 
 apply plugin: 'com.android.library'
 
+def safeExtGet(prop, fallback) {
+    rootProject.ext.has(prop) ? rootProject.ext.get(prop) : fallback
+}
+
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    compileSdkVersion safeExtGet('compileSdkVersion', 28)
+    buildToolsVersion safeExtGet('buildToolsVersion', "28.0.3")
 
     useLibrary 'org.apache.http.legacy'
 
     defaultConfig {
-        minSdkVersion 16
-        targetSdkVersion 28
+        minSdkVersion safeExtGet('minSdkVersion', 16)
+        targetSdkVersion safeExtGet('targetSdkVersion', 28)
         versionCode 1
         versionName "1.0"
         multiDexEnabled = true
@@ -45,15 +49,16 @@ repositories {
     }
     flatDir {
         dirs 'libs'
+//        dirs "$rootDir/../node_modules/react-native-mintegral/android/libs"
     }
 }
 
 dependencies {
-//    implementation fileTree(include: ['*.aar'], dir: 'libs')
-    implementation(name: 'mintegral_chinacommon', ext: 'aar')
-    implementation(name: 'mintegral_reward', ext: 'aar')
-    implementation(name: 'mintegral_interstitialvideo', ext: 'aar')
+    implementation fileTree(include: ['*.aar'], dir: 'libs')
+//    implementation(name: 'mintegral_chinacommon', ext: 'aar')
+//    implementation(name: 'mintegral_reward', ext: 'aar')
+//    implementation(name: 'mintegral_interstitialvideo', ext: 'aar')
 
-    implementation 'com.facebook.react:react-native:+'
+    implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
 }
   
