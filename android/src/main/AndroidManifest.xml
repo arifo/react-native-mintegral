@@ -17,6 +17,16 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
+        <provider
+            android:name="com.mintegral.msdk.base.utils.MTGFileProvider"
+            android:authorities="${applicationId}.mtgFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/mtg_provider_paths"/>
+        </provider>
+
         <receiver android:name="com.mintegral.msdk.click.AppReceiver" >
             <intent-filter>
                 <action android:name="android.intent.action.PACKAGE_ADDED" />
@@ -29,6 +39,8 @@
                 <action android:name="com.mintegral.msdk.download.action" />
             </intent-filter>
         </service>
+
+
     </application>
 
 </manifest>
