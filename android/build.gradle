@@ -47,18 +47,11 @@ repositories {
         url 'https://maven.google.com/'
         name 'Google'
     }
-    flatDir {
-        dirs 'libs'
-//        dirs "$rootDir/../node_modules/react-native-mintegral/android/libs"
-    }
+    jcenter()
 }
 
 dependencies {
     implementation fileTree(include: ['*.aar'], dir: 'libs')
-//    implementation(name: 'mintegral_chinacommon', ext: 'aar')
-//    implementation(name: 'mintegral_reward', ext: 'aar')
-//    implementation(name: 'mintegral_interstitialvideo', ext: 'aar')
-
     implementation "com.facebook.react:react-native:${safeExtGet('reactNativeVersion', '+')}"
 }
   
